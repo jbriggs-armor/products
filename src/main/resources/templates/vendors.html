@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Vendors</title>
+</head>
+<body>
+    <div th:if="${not#lists.isEmpty(vendors)}">
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Created</th>
+                <th>Last Modified</th>
+            </tr>
+            <tr th:each="vendor : ${vendors}">
+                <td th:text="${vendor.id}"></td>
+                <td th:text="${vendor.name}"></td>
+                <td th:text="${vendor.createdDatetime}"></td>
+                <td th:text="${vendor.modifiedDatetime}"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

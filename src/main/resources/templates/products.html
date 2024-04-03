@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Products</title>
+</head>
+<body>
+    <div th:if="${ not#lists.isEmpty(products)}">
+        <table>
+            <tr>
+                <th>Vendor</th>
+                <th>Product Name</th>
+                <th>Description</th>
+            </tr>
+            <tr th:each="product : ${products}">
+                <td th:text="${product.id}"></td>
+                <td th:text="${product.name}"></td>
+                <td th:text="${product.createdDatetime}"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
